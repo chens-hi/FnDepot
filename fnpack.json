@@ -1,0 +1,9 @@
+{
+  "schema_version": "2",
+  "source_info": {
+    "name": "个人 FnDepot 应用源",
+    "author": "chens-hi",
+    "description": "飞牛 fnOS 第三方应用源"
+  },
+  "apps": {}
+}
