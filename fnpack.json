@@ -30,20 +30,20 @@
       "is_docker": false,
       "service_port": "",
       "releases": {
-        "1.0.282": {
+        "1.0.287": {
           "changelog": "优化执行效率，修复已知问题",
-          "updated_at": "2026-10-30T15:17:44+08:00",
+          "updated_at": "2026-10-30T21:59:47+08:00",
           "os_min_version": "1.2.0",
           "packages": {
             "x86": {
-              "download_url": "https://raw.githubusercontent.com/chens-hi/FnDepot/main/shortcuts/fpk/shortcuts-1.0.282-linux-amd64.fpk",
-              "sha256": "11b7db7eecee7b6e72041435f60d6d69e86cd08cfcf0115422ead0e51cf7e82a",
-              "size": 6829468
+              "download_url": "https://raw.githubusercontent.com/chens-hi/FnDepot/main/shortcuts/fpk/shortcuts-1.0.287-linux-amd64.fpk",
+              "sha256": "33abe087463e51ac452546eaceb85f7f07ced3d13a0b88adeb602a355736e718",
+              "size": 6836756
             },
             "arm": {
-              "download_url": "https://raw.githubusercontent.com/chens-hi/FnDepot/main/shortcuts/fpk/shortcuts-1.0.282-linux-arm64.fpk",
-              "sha256": "d5dea7b28a4bc7601fb5b4b54f09ea238fad15072971a8725215082190383e70",
-              "size": 6434916
+              "download_url": "https://raw.githubusercontent.com/chens-hi/FnDepot/main/shortcuts/fpk/shortcuts-1.0.287-linux-arm64.fpk",
+              "sha256": "d850a2f12d218fd3630ab4c9f4175ac7fbbcb6420c0974fc56080506ed8718ca",
+              "size": 6439639
             }
           }
         }

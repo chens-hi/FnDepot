@@ -12,10 +12,10 @@
 
 | 应用 | appname | 版本 | 架构 | 分类 |
 | --- | --- | --- | --- | --- |
-| 快捷图标 | `shortcuts` | 1.0.282 | x86 / arm | 系统工具 |
+| 快捷图标 | `shortcuts` | 1.0.287 | x86 / arm | 系统工具 |
 
 - 图标、预览图、README：`shortcuts/ICON.PNG`、`shortcuts/Preview/1-6.png`、`shortcuts/README.md`。
-- 安装包：`shortcuts/fpk/shortcuts-1.0.282-linux-amd64.fpk`、`-linux-arm64.fpk`，在 `fnpack.json` 中以 `raw.githubusercontent.com` 绝对地址引用，客户端不访问应用自身的私有仓库。
+- 安装包：`shortcuts/fpk/shortcuts-1.0.287-linux-amd64.fpk`、`-linux-arm64.fpk`，在 `fnpack.json` 中以 `raw.githubusercontent.com` 绝对地址引用，客户端不访问应用自身的私有仓库。
 - 仓库 Description 含 `FnDepot`，topics 为 `fndepot`、`fnnas`、`fnos`（已设置）。
 
 ## 路径 A：自动收录（推荐）
