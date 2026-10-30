@@ -8,17 +8,28 @@
 - 该脚本不读取任何人工维护的名单，每次运行都会整体重写文件。**直接 PR 修改 `valid_sources.txt` 会在次日被覆盖。**
 - 主仓 README 允许提 PR/Issue，但那是把应用收进主仓**内置源**，不是收录你的源仓。
 
+## 本仓当前应用
+
+| 应用 | appname | 版本 | 架构 | 分类 |
+| --- | --- | --- | --- | --- |
+| 快捷图标 | `shortcuts` | 1.0.282 | x86 / arm | 系统工具 |
+
+- 图标、预览图、README：`shortcuts/ICON.PNG`、`shortcuts/Preview/1-6.png`、`shortcuts/README.md`。
+- 安装包：`shortcuts/fpk/shortcuts-1.0.282-linux-amd64.fpk`、`-linux-arm64.fpk`，在 `fnpack.json` 中以 `raw.githubusercontent.com` 绝对地址引用，客户端不访问应用自身的私有仓库。
+- 仓库 Description 含 `FnDepot`，topics 为 `fndepot`、`fnnas`、`fnos`（已设置）。
+
 ## 路径 A：自动收录（推荐）
 
 ### 前置条件
 
 1. 仓库默认分支（`main`）根目录有大小写精确的 `fnpack.json`。
-2. 文件是合法 JSON，`schema_version` 为 `"2"`（V1 也兼容）。
+2. 文件是合法 JSON，`schema_version` 为 `"2"`（V1 仍兼容，但主仓已说明后续取消，新源不要再用 V1）。
 3. `apps` 数量在 1–5000 之间。**空 `apps` 不会被收录。**
 4. `source_info.name`、`source_info.author` 非空；author 归一化后不能等于 `fndepot`。
-5. 每个应用至少有 `display_name`、`desc`；`is_docker` 为布尔；`install_type` 为 `""` 或 `"root"`；`run_as` 为 `package` 或 `root`。
+5. 每个应用的必填字段齐全：`display_name`、`desc`、`platform`、`categories`、`icon_url`、`run_as`、`install_type`、`is_docker`；`platform` 只取 `all`/`x86`/`arm`，`categories` 最多 2 个，`preview_urls` 最多 8 张，`install_type` 为 `""` 或 `"root"`，`run_as` 为 `package` 或 `root`。
 6. 仓库 6 个月内有活动；不在主仓黑名单；与已有源的重叠率不超过阈值。
 7. 仓库能被 GitHub 搜索到：搜索词包括 `fndepot`、`fn depot`、`filename:fnpack.json`。
+8. 仓库公开：`download_url` 指向的 fpk 必须能被匿名下载，私有仓的安装包客户端取不到。
 
 ### 操作
 
@@ -38,6 +49,8 @@ node scripts/validate.mjs --strict
 - 文件名是否精确为 `fnpack.json`（大小写敏感）。
 - 默认分支是否为 `main`，文件是否在根目录。
 - `apps` 是否为空；必填字段是否齐全。
+- `categories` 是否超过 2 个、`preview_urls` 是否超过 8 张（客户端只读前 8 张）。
+- `download_url` 是否为 http(s) 地址，能否匿名下载（私有仓资源会 404）。
 - 最近 6 个月是否有提交。
 - author 是否被归一化成 `fndepot`。
 - 是否与已有源内容高度重复（阈值：fork 50%/30%，普通源 85%/70%）。
@@ -69,5 +82,5 @@ node scripts/validate.mjs --input <主仓路径>/fnpack.json
 
 主仓的扫描规则没有独立文档，本仓的 `scripts/validate.mjs` 按主仓 README 与 `generate_sources.py` 的硬性规则复刻。若主仓脚本变更，需要同步更新：
 
-- `scripts/validate.mjs` 的字段与阈值。
-- 本文的收录条件。
+- `scripts/validate.mjs` 的字段与阈值（含 `categories` 上限、`preview_urls` 上限、架构覆盖、`homepage` 校验）。
+- 本文的收录条件与「本仓当前应用」一节。

@@ -5,6 +5,8 @@ import { resolve } from 'node:path';
 const MAX_FILE_BYTES = 2 * 1024 * 1024;
 const MAX_APPS = 5000;
 const MAX_RELEASES = 100;
+const MAX_CATEGORIES = 2;
+const MAX_PREVIEWS = 8;
 const PLATFORMS = new Set(['all', 'x86', 'arm']);
 const CATEGORIES = new Set([
   '影音娱乐',
@@ -105,6 +107,9 @@ if (!isPlainObject(source.source_info)) {
       fail('source_info.author 不能是 "fndepot"（主仓禁止冒充）');
     }
   }
+  if (Object.hasOwn(source.source_info, 'homepage') && !isHttpUrl(source.source_info.homepage)) {
+    fail('source_info.homepage 必须是 http(s) 地址');
+  }
 }
 
 if (!isPlainObject(source.apps)) {
@@ -150,6 +155,9 @@ if (!isPlainObject(source.apps)) {
     if (!Array.isArray(app.categories) || app.categories.length === 0) {
       fail(`${at}.categories 必须是非空数组`);
     } else {
+      if (app.categories.length > MAX_CATEGORIES) {
+        fail(`${at}.categories 最多 ${MAX_CATEGORIES} 个，当前 ${app.categories.length} 个`);
+      }
       for (const value of app.categories) {
         if (!CATEGORIES.has(value)) {
           fail(`${at}.categories 含非法值 ${JSON.stringify(value)}`);
@@ -186,6 +194,8 @@ if (!isPlainObject(source.apps)) {
     if (Object.hasOwn(app, 'preview_urls')) {
       if (!Array.isArray(app.preview_urls) || !app.preview_urls.every(isAssetRef)) {
         fail(`${at}.preview_urls 必须是由 http(s) 地址或相对路径组成的数组`);
+      } else if (app.preview_urls.length > MAX_PREVIEWS) {
+        fail(`${at}.preview_urls 最多 ${MAX_PREVIEWS} 张，客户端只读前 ${MAX_PREVIEWS} 张`);
       }
     }
 
@@ -230,6 +240,15 @@ if (!isPlainObject(source.apps)) {
       const archKeys = Object.keys(release.packages);
       if (archKeys.length === 0) {
         fail(`${vAt}.packages 至少需要一个架构包`);
+      }
+
+      if (Array.isArray(app.platform)) {
+        for (const platform of app.platform) {
+          if (platform === 'all' || !PLATFORMS.has(platform)) continue;
+          if (!Object.hasOwn(release.packages, platform) && !Object.hasOwn(release.packages, 'all')) {
+            fail(`${vAt}.packages 缺少 ${platform} 或 all 分支，${platform} 设备无法安装`);
+          }
+        }
       }
 
       for (const arch of archKeys) {

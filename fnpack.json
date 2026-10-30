@@ -3,7 +3,51 @@
   "source_info": {
     "name": "个人 FnDepot 应用源",
     "author": "chens-hi",
-    "description": "飞牛 fnOS 第三方应用源"
+    "description": "飞牛 fnOS 第三方应用源",
+    "homepage": "https://github.com/chens-hi/FnDepot"
   },
-  "apps": {}
+  "apps": {
+    "shortcuts": {
+      "display_name": "快捷图标",
+      "desc": "把局域网服务的端口与路径生成为独立的桌面快捷入口。",
+      "platform": ["x86", "arm"],
+      "categories": ["系统工具"],
+      "icon_url": "./shortcuts/ICON.PNG",
+      "preview_urls": [
+        "./shortcuts/Preview/1.png",
+        "./shortcuts/Preview/2.png",
+        "./shortcuts/Preview/3.png",
+        "./shortcuts/Preview/4.png",
+        "./shortcuts/Preview/5.png",
+        "./shortcuts/Preview/6.png"
+      ],
+      "readme_url": "./shortcuts/README.md",
+      "bug_report_url": "https://github.com/chens-hi/FnDepot/issues",
+      "maintainer": "chens-hi",
+      "maintainer_url": "https://github.com/chens-hi",
+      "run_as": "package",
+      "install_type": "",
+      "is_docker": false,
+      "service_port": "",
+      "releases": {
+        "1.0.282": {
+          "changelog": "优化执行效率，修复已知问题",
+          "updated_at": "2026-10-30T15:17:44+08:00",
+          "os_min_version": "1.2.0",
+          "packages": {
+            "x86": {
+              "download_url": "https://raw.githubusercontent.com/chens-hi/FnDepot/main/shortcuts/fpk/shortcuts-1.0.282-linux-amd64.fpk",
+              "sha256": "11b7db7eecee7b6e72041435f60d6d69e86cd08cfcf0115422ead0e51cf7e82a",
+              "size": 6829468
+            },
+            "arm": {
+              "download_url": "https://raw.githubusercontent.com/chens-hi/FnDepot/main/shortcuts/fpk/shortcuts-1.0.282-linux-arm64.fpk",
+              "sha256": "d5dea7b28a4bc7601fb5b4b54f09ea238fad15072971a8725215082190383e70",
+              "size": 6434916
+            }
+          }
+        }
+      }
+    }
+  }
 }
