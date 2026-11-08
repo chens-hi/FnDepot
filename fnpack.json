@@ -3,7 +3,38 @@
   "source_info": {
     "name": "个人 FnDepot 应用源",
     "author": "chens-hi",
-    "description": "飞牛 fnOS 第三方应用源"
+    "description": "飞牛 fnOS 第三方应用源",
+    "homepage": "https://github.com/chens-hi/FnDepot"
   },
-  "apps": {}
+  "apps": {
+    "shortcuts": {
+      "display_name": "快捷图标",
+      "desc": "一键在飞牛 fnOS 桌面上创建快捷原生图标。",
+      "platform": ["all"],
+      "categories": ["系统工具"],
+      "icon_url": "./shortcuts/ICON.PNG",
+      "readme_url": "./shortcuts/README.md",
+      "bug_report_url": "https://github.com/chens-hi/Shortcuts/issues",
+      "maintainer": "chens-hi",
+      "maintainer_url": "https://github.com/chens-hi",
+      "run_as": "package",
+      "install_type": "",
+      "is_docker": false,
+      "service_port": "",
+      "releases": {
+        "1.1.2": {
+          "changelog": "适配全平台，优化打包流程",
+          "updated_at": "2026-11-08T22:00:00+08:00",
+          "os_min_version": "1.2.0",
+          "packages": {
+            "all": {
+              "download_url": "https://github.com/chens-hi/Shortcuts/releases/download/latest/shortcuts-1.1.2.fpk",
+              "sha256": "321b7cac96f3d7b00e235a1b71a479a517026200f64689e21bfc863e312e33de",
+              "size": 16058630
+            }
+          }
+        }
+      }
+    }
+  }
 }
