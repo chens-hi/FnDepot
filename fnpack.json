@@ -28,7 +28,7 @@
           "os_min_version": "1.2.0",
           "packages": {
             "all": {
-              "download_url": "https://github.com/chens-hi/Shortcuts/releases/download/latest/shortcuts-1.1.2.fpk",
+              "download_url": "https://raw.githubusercontent.com/chens-hi/FnDepot/main/shortcuts/shortcuts-1.1.2.fpk",
               "sha256": "321b7cac96f3d7b00e235a1b71a479a517026200f64689e21bfc863e312e33de",
               "size": 16058630
             }
