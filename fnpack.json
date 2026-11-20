@@ -35,35 +35,6 @@
           }
         }
       }
-    },
-    "omniedit": {
-      "display_name": "随心编辑器",
-      "desc": "飞牛原生文本编辑器，覆盖 NAS 上的代码、配置、Markdown 与富文本编辑场景。大文件异步分批加载、语法高亮、实时预览、会话恢复与移动端适配。",
-      "platform": ["all"],
-      "categories": ["系统工具", "编程开发"],
-      "icon_url": "./omniedit/ICON.PNG",
-      "readme_url": "./omniedit/README.md",
-      "bug_report_url": "https://github.com/chens-hi/OmniEdit/issues",
-      "maintainer": "chens-hi",
-      "maintainer_url": "https://github.com/chens-hi",
-      "run_as": "root",
-      "install_type": "root",
-      "is_docker": false,
-      "service_port": "",
-      "releases": {
-        "0.7.22": {
-          "changelog": "关于弹窗内容重排：副标题弱化、新增项目主页/问题反馈链接与关闭按钮，修正字体颜色层级",
-          "updated_at": "2026-11-15T13:48:45+08:00",
-          "os_min_version": "1.2.0",
-          "packages": {
-            "all": {
-              "download_url": "https://raw.githubusercontent.com/chens-hi/FnDepot/main/omniedit/omniedit-0.7.22.fpk",
-              "sha256": "9129ba1c9cb254166042b0875d5c3cc97c36aa750112d6cb790466175efb3b4b",
-              "size": 11677233
-            }
-          }
-        }
-      }
     }
   }
 }
