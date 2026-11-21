@@ -14,7 +14,7 @@
       "categories": ["系统工具"],
       "icon_url": "./shortcuts/ICON.PNG",
       "readme_url": "./shortcuts/README.md",
-      "bug_report_url": "https://github.com/chens-hi/Shortcuts/issues",
+      "bug_report_url": "https://github.com/chens-hi/Feedback",
       "maintainer": "chens-hi",
       "maintainer_url": "https://github.com/chens-hi",
       "run_as": "package",
