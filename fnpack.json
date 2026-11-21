@@ -33,18 +33,6 @@
               "size": 6937694
             }
           }
-        },
-        "1.1.2": {
-          "changelog": "适配全平台，优化打包流程",
-          "updated_at": "2026-11-08T22:00:00+08:00",
-          "os_min_version": "1.2.0",
-          "packages": {
-            "all": {
-              "download_url": "https://raw.githubusercontent.com/chens-hi/FnDepot/main/shortcuts/shortcuts-1.1.2.fpk",
-              "sha256": "321b7cac96f3d7b00e235a1b71a479a517026200f64689e21bfc863e312e33de",
-              "size": 16058630
-            }
-          }
         }
       }
     }
