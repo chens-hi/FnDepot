@@ -23,7 +23,7 @@
       "service_port": "",
       "releases": {
         "1.3.0": {
-          "changelog": "1.新增端口映射docker容器可选列表\n2.新增自适应主题、自适应语言功能\n3.优化编辑窗口可视化表现",
+          "changelog": "1.新增端口映射docker容器可选列表<br>2.新增自适应主题、自适应语言功能<br>3.优化编辑窗口可视化表现",
           "updated_at": "2026-11-21T12:05:02+08:00",
           "os_min_version": "1.2.0",
           "packages": {
