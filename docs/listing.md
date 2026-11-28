@@ -12,10 +12,10 @@
 
 | 应用 | appname | 版本 | 架构 | 分类 |
 | --- | --- | --- | --- | --- |
-| 快捷图标 | `shortcuts` | 1.1.2 | all | 系统工具 |
+| 快捷图标 | `shortcuts` | 1.3.3 | all | 系统工具 |
 
 - 图标、README：`shortcuts/ICON.PNG`、`shortcuts/README.md`。
-- 安装包来自 Shortcuts 仓库 release：`https://github.com/chens-hi/Shortcuts/releases/download/latest/shortcuts-1.1.2.fpk`，单包全平台。
+- 安装包随本仓分发：`shortcuts/shortcuts-1.3.3.fpk`，单包全平台。
 - 仓库 Description 含 `FnDepot`，topics 为 `fndepot`、`fnnas`、`fnos`（已设置）。
 
 ## 路径 A：自动收录（推荐）
